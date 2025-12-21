@@ -7,40 +7,40 @@
 
 ## Thống kê chi tiết theo danh mục
 
-| STT | Danh mục | Số file | Số lỗ hổng | Tỷ lệ % |
-|-----|----------|---------|------------|---------|
-| 1 | **Access Control** | 17 | 20 | 18.35% |
-| 2 | **Arithmetic** | 14 | 22 | 20.18% |
-| 3 | **Denial of Service** | 6 | 7 | 6.42% |
-| 4 | **Bad Randomness** | 8 | 31 | 28.44% |
-| 5 | **Front Running** | 4 | 7 | 6.42% |
-| 6 | **Reentrancy** | 7 | 7 | 6.42% |
-| 7 | **Time Manipulation** | 4 | 5 | 4.59% |
-| 8 | **Unchecked Low Calls** | 5 | 6 | 5.50% |
-| 9 | **Other** | 3 | 3 | 2.75% |
-| 10 | **Short Addresses** | 1 | 1 | 0.92% |
-| | **TỔNG CỘNG** | **69** | **109** | **100%** |
+| STT | Danh mục | Số file | Số lỗ hổng | 
+|-----|----------|---------|------------|
+| 1 | **Access Control** | 17 | 23 | 
+| 2 | **Arithmetic** | 14 | 22 | 
+| 3 | **Denial of Service** | 6 | 14 |
+| 4 | **Bad Randomness** | 8 | 34 |
+| 5 | **Front Running** | 4 | 7 | 
+| 6 | **Reentrancy** | 7 | 7 | 
+| 7 | **Time Manipulation** | 4 | 5 | 
+| 8 | **Unchecked Low Calls** | 5 | 6 | 
+| 9 | **Other** | 3 | 5 | 
+| 10 | **Short Addresses** | 1 | 1 | 
+| | **TỔNG CỘNG** | **69** | **124** | 
 
 ## Phân tích
 
 ### Top 3 lỗ hổng phổ biến nhất:
 
-1. **Bad Randomness (28.44%)**: 31 lỗ hổng trong 8 files
+1. **Bad Randomness**: 34 lỗ hổng trong 8 files
    - Lỗ hổng liên quan đến việc tạo số ngẫu nhiên không an toàn
    - Chiếm tỷ trọng cao nhất trong dataset
 
-2. **Arithmetic (20.18%)**: 22 lỗ hổng trong 14 files
-   - Lỗ hổng về integer overflow/underflow
+2. **Access Control**: 23 lỗ hổng trong 17 files
+   - Lỗ hổng về kiểm soát truy cập và phân quyền
    - Lỗ hổng phổ biến thứ 2
 
-3. **Access Control (18.35%)**: 20 lỗ hổng trong 17 files
-   - Lỗ hổng về kiểm soát truy cập và phân quyền
+3. **Arithmetic**: 22 lỗ hổng trong 14 files
+   - Lỗ hổng về integer overflow/underflow
    - Lỗ hổng phổ biến thứ 3
 
 ### Lỗ hổng ít gặp nhất:
 
 - **Short Addresses (0.92%)**: 1 lỗ hổng duy nhất
-- **Other (2.75%)**: 3 lỗ hổng không thuộc danh mục chính
+- **Other (4.59%)**: 5 lỗ hổng không thuộc danh mục chính
 
 ## Cấu trúc thư mục
 
