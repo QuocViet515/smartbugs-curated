@@ -8,7 +8,7 @@
 ## 📊 Tổng quan Dataset
 
 - **Tổng số file Solidity**: 69 contracts
-- **Tổng số lỗ hổng**: 109 vulnerabilities
+- **Tổng số lỗ hổng**: 124 vulnerabilities
 - **Phiên bản Solidity**: 0.4.x
 - **Nguồn**: SmartBugs, SWC Registry, Etherscan, GitHub
 
@@ -32,16 +32,16 @@ dataset/
 
 | Danh mục | Số file | Số lỗ hổng | Tỷ lệ % | Mô tả |
 |----------|---------|------------|---------|-------|
-| **Bad Randomness** | 8 | 31 | 28.44% | Sử dụng blockhash, timestamp để tạo số ngẫu nhiên |
-| **Arithmetic** | 14 | 22 | 20.18% | Integer overflow/underflow |
-| **Access Control** | 17 | 20 | 18.35% | Thiếu kiểm soát quyền truy cập, constructor sai tên |
-| **Denial of Service** | 6 | 7 | 6.42% | Gas limit, vòng lặp không giới hạn |
-| **Front Running** | 4 | 7 | 6.42% | Transaction ordering dependence |
-| **Reentrancy** | 7 | 7 | 6.42% | Gọi lại hàm trước khi cập nhật state |
-| **Unchecked Low Calls** | 5 | 6 | 5.50% | Không kiểm tra return value của call() |
-| **Time Manipulation** | 4 | 5 | 4.59% | Phụ thuộc vào block.timestamp |
-| **Other** | 3 | 3 | 2.75% | Các lỗ hổng khác |
-| **Short Addresses** | 1 | 1 | 0.92% | Tấn công short address ERC20 |
+| **Bad Randomness** | 8 | 34 | 27.42% | Sử dụng blockhash, timestamp để tạo số ngẫu nhiên |
+| **Access Control** | 17 | 23 | 18.55% | Thiếu kiểm soát quyền truy cập, constructor sai tên |
+| **Arithmetic** | 14 | 22 | 17.74% | Integer overflow/underflow |
+| **Denial of Service** | 6 | 14 | 11.29% | Gas limit, vòng lặp không giới hạn |
+| **Front Running** | 4 | 7 | 5.65% | Transaction ordering dependence |
+| **Reentrancy** | 7 | 7 | 5.65% | Gọi lại hàm trước khi cập nhật state |
+| **Unchecked Low Calls** | 5 | 6 | 4.84% | Không kiểm tra return value của call() |
+| **Time Manipulation** | 4 | 5 | 4.03% | Phụ thuộc vào block.timestamp |
+| **Other** | 3 | 5 | 4.03% | Các lỗ hổng khác |
+| **Short Addresses** | 1 | 1 | 0.81% | Tấn công short address ERC20 |
 
 ## 📝 Định dạng dữ liệu
 
@@ -74,26 +74,26 @@ Dataset này phù hợp cho:
 
 ## 🔥 Các lỗ hổng nổi bật
 
-### 1. Bad Randomness (28.44%)
+### 1. Bad Randomness (27.42%)
 - Sử dụng `blockhash`, `block.timestamp`, `block.number` để tạo số ngẫu nhiên
 - Miner có thể thao túng các giá trị này
 - **Ví dụ**: lottery.sol, smart_billions.sol
 
-### 2. Arithmetic Overflow/Underflow (20.18%)
-- Không kiểm tra overflow khi cộng/nhân
-- Không kiểm tra underflow khi trừ
-- **Ví dụ**: BECToken.sol (lỗ hổng nổi tiếng), integer_overflow_mul.sol
-
-### 3. Access Control (18.35%)
+### 2. Access Control (18.55%)
 - Constructor có tên sai (Solidity <0.4.22)
 - Thiếu modifier kiểm tra quyền
 - Sử dụng `tx.origin` thay vì `msg.sender`
 - **Ví dụ**: parity_wallet_bug_1.sol, rubixi.sol
 
-### 4. Reentrancy (6.42%)
-- Gọi external contract trước khi cập nhật state
-- Cho phép attacker gọi lại hàm nhiều lần
-- **Ví dụ**: Các contract từ Etherscan
+### 3. Arithmetic Overflow/Underflow (17.74%)
+- Không kiểm tra overflow khi cộng/nhân
+- Không kiểm tra underflow khi trừ
+- **Ví dụ**: BECToken.sol (lỗ hổng nổi tiếng), integer_overflow_mul.sol
+
+### 4. Denial of Service (11.29%)
+- Gas limit vượt quá giới hạn block
+- Vòng lặp không kiểm soát được
+- **Ví dụ**: Các contract với vòng lặp động không giới hạn
 
 
 ## 📚 Nguồn tham khảo
