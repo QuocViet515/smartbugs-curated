@@ -18,8 +18,8 @@ contract NameRegistrar {
     mapping(bytes32 => address) public resolve; // resolves hashes to addresses
 
     function register(bytes32 _name, address _mappedAddress) public {
-        // set up the new NameRecord
-        // <yes> <report> OTHER - uninitialized storage
+        
+        
         NameRecord newRecord;
         newRecord.name = _name;
         newRecord.mappedAddress = _mappedAddress;
