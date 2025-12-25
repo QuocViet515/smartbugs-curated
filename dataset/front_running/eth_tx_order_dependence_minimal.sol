@@ -19,7 +19,7 @@ contract EthTxOrderDependenceMinimal {
         require (!claimed);
 
         require(msg.sender == owner);
-        // <yes> <report> FRONT_RUNNING
+        
         owner.transfer(reward);
         reward = msg.value;
     }
@@ -27,7 +27,7 @@ contract EthTxOrderDependenceMinimal {
     function claimReward(uint256 submission) {
         require (!claimed);
         require(submission < 10);
-        // <yes> <report> FRONT_RUNNING
+        
         msg.sender.transfer(reward);
         claimed = true;
     }
