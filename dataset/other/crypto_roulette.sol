@@ -36,8 +36,8 @@ contract CryptoRoulette {
 
     function play(uint256 number) payable public {
         require(msg.value >= betPrice && number <= 10);
-        // <yes> <report> OTHER - uninitialized storage
-        Game game; //Uninitialized storage pointer
+        
+        Game game; 
         game.player = msg.sender;
         game.number = number;
         gamesPlayed.push(game);
