@@ -14,7 +14,7 @@
      function MyToken() {
          balances[tx.origin] = 10000;
      }
-     // <yes> <report> SHORT_ADDRESSES
+  
      function sendCoin(address to, uint amount) returns(bool sufficient) {
          if (balances[msg.sender] < amount) return false;
          balances[msg.sender] -= amount;
