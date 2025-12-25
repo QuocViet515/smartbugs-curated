@@ -41,7 +41,7 @@ dataset/
 | **Unchecked Low Calls** | 5 | 6 | 4.84% | Không kiểm tra return value của call() |
 | **Time Manipulation** | 4 | 5 | 4.03% | Phụ thuộc vào block.timestamp |
 | **Other** | 3 | 5 | 4.03% | Các lỗ hổng khác |
-| **Short Addresses** | 1 | 1 | 0.81% | Tấn công short address ERC20 |
+| **Short Address** | 1 | 1 | 0.81% | Tấn công short address ERC20 |
 
 ## 📝 Định dạng dữ liệu
 
