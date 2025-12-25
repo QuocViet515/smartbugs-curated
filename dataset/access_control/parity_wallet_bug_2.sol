@@ -1,7 +1,7 @@
 /*
  * @source: https://smartcontractsecurity.github.io/SWC-registry/docs/SWC-106#walletlibrarysol
  * @author: -
- * @vulnerable_at_lines: 226,233
+ * 
  */
 
 //sol Wallet
@@ -222,14 +222,14 @@ contract WalletLibrary is WalletEvents {
 
   // constructor - just pass on the owner array to the multiowned and
   // the limit to daylimit
-  // <yes> <report> ACCESS_CONTROL
+  //
   function initWallet(address[] _owners, uint _required, uint _daylimit) only_uninitialized {
     initDaylimit(_daylimit);
     initMultiowned(_owners, _required);
   }
 
   // kills the contract sending everything to `_to`.
-  // <yes> <report> ACCESS_CONTROL
+  //
   function kill(address _to) onlymanyowners(sha3(msg.data)) external {
     suicide(_to);
   }

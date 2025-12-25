@@ -1,6 +1,6 @@
 /*
  * @source: https://etherscan.io/address/0x741f1923974464efd0aa70e77800ba5d9ed18902#code
- * @vulnerable_at_lines: 91
+ * 
  */
 
 pragma solidity ^0.4.19;
@@ -87,7 +87,7 @@ contract OpenAddressLottery{
     
     function forceReseed() { //reseed initiated by the owner - for testing purposes
         require(msg.sender==owner);
-        
+        //
         SeedComponents s;
         s.component1 = uint(msg.sender);
         s.component2 = uint256(block.blockhash(block.number - 1));

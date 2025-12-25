@@ -1,7 +1,7 @@
 /*
  * @source: etherscan.io 
  * @author: -
- * @vulnerable_at_lines: 52
+ * 
  */
 
 pragma solidity ^0.4.19;
@@ -48,7 +48,7 @@ contract PrivateDeposit
     {
         if(_am<=balances[msg.sender])
         {            
-            // <yes> <report> REENTRANCY
+            //
             if(msg.sender.call.value(_am)())
             {
                 balances[msg.sender]-=_am;

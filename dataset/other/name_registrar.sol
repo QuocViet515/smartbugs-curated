@@ -1,6 +1,6 @@
 /*
  * @source: https://github.com/sigp/solidity-security-blog#storage-example
- * @vulnerable_at_lines: 21
+ * 
  */
 // A Locked Name Registrar
 
@@ -18,8 +18,8 @@ contract NameRegistrar {
     mapping(bytes32 => address) public resolve; // resolves hashes to addresses
 
     function register(bytes32 _name, address _mappedAddress) public {
-        
-        
+        // set up the new NameRecord
+        //
         NameRecord newRecord;
         newRecord.name = _name;
         newRecord.mappedAddress = _mappedAddress;

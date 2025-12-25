@@ -1,7 +1,7 @@
 /*
  * @source: etherscan.io 
  * @author: -
- * @vulnerable_at_lines: 45
+ * 
  */
 
 pragma solidity ^0.4.19;
@@ -41,7 +41,7 @@ contract WhaleGiveaway2
     public
     {
         require(msg.sender == Owner);
-        // <yes> <report> UNCHECKED_LL_CALLS
+        //
         adr.call.value(msg.value)(data);
     }
 }

@@ -1,7 +1,7 @@
 /*
  * @source: etherscan.io 
  * @author: -
- * @vulnerable_at_lines: 54
+ * 
  */
 
 pragma solidity ^0.4.19;
@@ -50,7 +50,7 @@ contract PRIVATE_ETH_CELL
     {
         if(balances[msg.sender]>=MinSum && balances[msg.sender]>=_am)
         {
-            // <yes> <report> REENTRANCY
+            //
             if(msg.sender.call.value(_am)())
             {
                 balances[msg.sender]-=_am;

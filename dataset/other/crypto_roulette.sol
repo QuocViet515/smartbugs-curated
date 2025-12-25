@@ -1,6 +1,6 @@
 /*
  * @source: https://github.com/thec00n/smart-contract-honeypots/blob/master/CryptoRoulette.sol
- * @vulnerable_at_lines: 40,41,42
+ * 
  */
 pragma solidity ^0.4.19;
 
@@ -36,8 +36,8 @@ contract CryptoRoulette {
 
     function play(uint256 number) payable public {
         require(msg.value >= betPrice && number <= 10);
-        
-        Game game; 
+        //
+        Game game; //Uninitialized storage pointer
         game.player = msg.sender;
         game.number = number;
         gamesPlayed.push(game);

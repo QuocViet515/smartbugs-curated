@@ -1,7 +1,7 @@
 /*
  * @source: http://blockchain.unica.it/projects/ethereum-survey/attacks.html#oddsandevens
  * @author: -
- * @vulnerable_at_lines: 25,28
+ * 
  */
 
 pragma solidity ^0.4.2;
@@ -21,10 +21,10 @@ contract OddsAndEvens{
   function OddsAndEvens() {
     owner = msg.sender;
   }
-
+//
   function play(uint number) payable{
     if (msg.value != 1 ether) throw;
-    
+    //
     players[tot] = Player(msg.sender, number);
     tot++;
 
